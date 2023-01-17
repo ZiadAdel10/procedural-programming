@@ -1,0 +1,26 @@
+PROCEDURE dot_Product (v1, v2)
+VAR
+ ps : INTEGER =: 0
+ i : INTEGER
+BEGIN
+  FOR i FROM 0 TO v1 STEP 1  DO
+   ps += v1[i] * v2[i] 
+  END_FOR
+
+  RETURN ps
+END 
+
+PROCEDURE find_orthogonal(vectors)
+VAR
+  orthogonal = 0
+  vectors = [[1,2,3], [4,5,6], [-1,-2,-3], [-4,-5,-6], [1,1,1], [2,2,2]]
+BEGIN
+  for i FROM 0 TO vectors STEP 2
+   v1 = vectors[i]
+   v2 = vectors[i+1]
+      IF (dot_product(v1, v2) == 0) THEN
+        orthogonal += 1
+    END_IF 
+            
+END 
+    
